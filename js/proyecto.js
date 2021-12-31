@@ -1,5 +1,6 @@
 class Imagen {
-    constructor(nombre, categoria, precio, tamaño) {
+    constructor(numero, nombre, categoria, precio, tamaño) {
+        this.numero = numero,
         this.nombre = nombre;
         this.categoria   = categoria;
         this.precio  = precio;
@@ -12,28 +13,16 @@ El costo total es de ${this.precio} pesos.`)
     }
 };
 
-const IMAGEN1 = new Imagen ("Montañas", "Paisajes", 150, "376 x 249");
-const IMAGEN2 = new Imagen ("Atardecer", "Paisajes", 120, "376 x 249");
-const IMAGEN3 = new Imagen ("Puente", "Paisajes", 150, "376 x 249");
-const IMAGEN4 = new Imagen ("Lago",  "Paisajes", 120, "376 x 249");
-const IMAGEN5 = new Imagen ("Nieve", "Paisajes", 120, "376 x 249");
-const IMAGEN6 = new Imagen ("Noche", "Paisajes", 150, "376 x 249");
+const IMAGENES = [new Imagen (1, "Montañas", "Paisajes", 150, "376 x 249"), 
+                new Imagen (2, "Atardecer", "Paisajes", 120, "376 x 249"),
+                new Imagen (3, "Puente", "Paisajes", 150, "376 x 249"),
+                new Imagen (4, "Lago",  "Paisajes", 120, "376 x 249"),
+                new Imagen (5, "Nieve", "Paisajes", 120, "376 x 249"),
+                new Imagen (6, "Noche", "Paisajes", 150, "376 x 249")
+];
 
 function obtenerImagen(numeroImagen) {
-    switch (numeroImagen) {
-      case "1":
-          return IMAGEN1;
-      case "2":
-          return IMAGEN2;
-      case "3":
-          return IMAGEN3;
-      case "4":
-          return IMAGEN4;
-      case "5":
-          return IMAGEN5;
-      case "6":
-          return IMAGEN6;    
-    }
+    return IMAGENES.find(imagen => imagen.numero == numeroImagen);
   }
   
 let nombreCliente = prompt("Ingrese su nombre");
