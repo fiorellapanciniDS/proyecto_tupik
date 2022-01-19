@@ -6,10 +6,10 @@ class Imagen {
       this.tamaño = tamaño;
    }
 
-   confirmarCompra() {
+/*    confirmarCompra() {
       alert(`Gracias por su compra de la imagen ${this.nombre} de la categoria ${this.categoria}.
 El costo total es de ${this.precio} pesos.`);
-   }
+   } */
 }
 
 const IMAGENES = [
@@ -40,6 +40,18 @@ Llamar al  ${telefono}`)
 
 let formularioBusqueda = document.getElementById("formularioBusqueda");
 formularioBusqueda.addEventListener("submit", buscarImagenes);
+
+(function() {
+    let listaImagenesDiv = document.getElementById("listaImagenes");
+
+    IMAGENES.forEach(function (imagen) {
+           let vistaImagenes = document.createElement("li");
+           // Insertar HTML interno
+           vistaImagenes.innerHTML =
+           `<li><img src="assets/imagen${imagen.numero}.jpg" class= "imagenes" alt="paisaje"></img></li>`;
+           listaImagenesDiv.appendChild(vistaImagenes);
+     });
+})();
 
 function borrarImagenes() {
    document.getElementById("listaImagenes").innerHTML = "";
