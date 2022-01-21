@@ -29,7 +29,7 @@ function buscarImagenes(e) {
 
    borrarImagenes();
 
-   let aBuscar = document.getElementById("busquedaInput").value;
+   let aBuscar = document.getElementById("busquedaInput").value.toLowerCase();
    let listaImagenesDiv = document.getElementById("listaImagenes");
 
    IMAGENES.forEach(function (imagen) {
